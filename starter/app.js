@@ -159,8 +159,8 @@ var UIController = (function() {
         },
 
         displayBudget: function(obj) {
-           // var type;
-            // obj.budget > 0 ? type = 'inc' : type = 'exp';
+            var type;
+            obj.budget > 0 ? type = 'inc' : type = 'exp';
             
             document.querySelector(DOMstrings.budgetLabel).textContent = obj.budget;
             document.querySelector(DOMstrings.incomeLabel).textContent = obj.totalInc;
@@ -197,7 +197,7 @@ var controller = (function(budgetCtrl, UICtrl) {
         }
     });
 
-    document.querySelector(DOM.container)addEventListener('click', ctrlDeleteItem);
+    document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
 };
     var updateBudget = function() {
         
@@ -239,7 +239,7 @@ var controller = (function(budgetCtrl, UICtrl) {
         
     };
 
-    var ctrlDeleteItem = funtion(event) {
+    var ctrlDeleteItem = function(event) {
         var itemID, splitID, type, ID;
 
         itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
@@ -248,10 +248,10 @@ var controller = (function(budgetCtrl, UICtrl) {
             splitID = itemID.split('-');
             type = splitID[0];
             ID = splitID[1];
-            
-        }
 
-    };
+        }
+    };    
+    
 
 
     return {
