@@ -154,9 +154,19 @@ var UIController = (function() {
             newHtml = newHtml.replace('%value%', obj.value);
 
             //Insert HTML into the DOM
+
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
 
         },
+
+        deleteListItem: function(selectorID) {
+            
+            var el = document.getElementById(selectorID);
+            el.parentNode.removeChild(el);
+            
+        },
+
+
             //Clears entry fields after data is entered into list
         clearFields: function () {
             var fields, fieldsArr;
@@ -264,8 +274,14 @@ var controller = (function(budgetCtrl, UICtrl) {
             type = splitID[0];
             ID = parseInt(splitID[1]);
 
+            // Delete Item from data structure
             budgetCtrl.deleteItem(type, ID);
 
+            //Delete Item from UI
+            UICtrl.deleteListItem(itemID);
+
+            //Update and show new budget
+            updateBudget();
         }
     };    
     
