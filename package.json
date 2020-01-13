@@ -1,0 +1,19 @@
+{
+  "name": "6-budgety",
+  "version": "1.0.0",
+  "description": "Fun JavaScript budget app...  Actually some pretty complex logic!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImDP/Budgety.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ImDP/Budgety/issues"
+  },
+  "homepage": "https://github.com/ImDP/Budgety#readme"
+}
